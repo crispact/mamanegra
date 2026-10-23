@@ -1,0 +1,82 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% set post_url = post.op1 in ['personajes', 'la-comparsa'] ? '/' ~ post.op1 ~ '/' ~ post.slug : '/' ~ post.slug %}
+
+{% block page_title %}{{ post.title }} - la comparsa de la mama negra | Latacunga - Ecuador{% endblock %}
+{% block og_title %}{{ post.title }} | Latacunga - Ecuador{% endblock %}
+{% block og_url %}{{ url }}{% endblock %}
+{% block og_description %}{{ post['meta-description'] }}{% endblock %}
+{% block og_image %}https://www.mamanegra.com.ec/assets/img/logo_180_180.png{% endblock %}
+{% block canonical %}{{ url }}{% endblock %}
+{% block itemprop_name %}{{ post.title }} | Latacunga - Ecuador{% endblock %}
+{% block itemprop_description %}{{ post['meta-description'] }}{% endblock %}
+{% block meta_description %}{{ post['meta-description'] }}{% endblock %}
+
+{% block content %}
+    {% include 'partials/top-header.html.twig' %}
+
+    <div class="breadcumb-area" style="background-image: url('/assets/img/bg-img/breadcumb.jpg');">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="bradcumb-title text-center">
+                        <h1 style="font-size: 48px; color: #fff;">{{ post.title }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Inicio</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ post.title }}</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="single_blog_area section_padding_80">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <div class="row no-gutters">
+                        <div class="col-2 col-sm-1">
+                            <div class="single-post-share-info mt-100">
+                                <a href="{{ share_link(post_url, 'facebook') }}" class="facebook">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
+                                <a href="{{ share_link(post_url, 'twitter', post.title) }}" class="twitter">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                                <a href="{{ share_link(post_url, 'pinterest', post.title, post.image) }}" class="pinterest">
+                                    <i class="fa fa-pinterest" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-10 col-sm-11">
+                            <div class="single-post">
+                                <div class="post-thumb">
+                                    <img src="{{ post.image }}" alt="{{ post.title }}">
+                                </div>
+                                <div class="post-content">
+                                    {{ post.body|raw }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% include 'partials/sidebar.html.twig' with { items: otros } %}
+            </div>
+        </div>
+    </section>
+
+    {% include 'partials/footer.html.twig' with { slider: slider } %}
+{% endblock %}

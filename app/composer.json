@@ -1,0 +1,21 @@
+{
+    "name": "mamanegra/slim-app",
+    "description": "La Comparsa de la Mama Negra - Slim PHP 4",
+    "require": {
+        "php": "^8.2",
+        "slim/slim": "^4.12",
+        "slim/psr7": "^1.6",
+        "php-di/php-di": "^7.0",
+        "slim/twig-view": "^3.3",
+        "vlucas/phpdotenv": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}

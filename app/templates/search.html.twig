@@ -1,0 +1,67 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block page_title %}{{ titulo }} - la comparsa de la mama negra{% endblock %}
+{% block og_title %}busqueda - la comparsa de la mama negra | Latacunga - Ecuador{% endblock %}
+{% block og_url %}{{ url }}{% endblock %}
+{% block canonical %}{{ url }}{% endblock %}
+
+{% block content %}
+    {% include 'partials/top-header.html.twig' %}
+
+    <div class="breadcumb-area" style="background-image: url('/assets/img/bg-img/breadcumb.jpg');">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="bradcumb-title text-center">
+                        <h2>{{ titulo }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breadcumb-nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Inicio</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">busqueda</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="single_blog_area section_padding_80">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <div class="row no-gutters">
+                        <div class="col-10 col-sm-11">
+                            <div class="single-post">
+                                <div class="post-content">
+                                    <div class="resultados">
+                                        {% for item in resultados %}
+                                            {% set item_url = item.op1 in ['personajes', 'la-comparsa'] ? '/' ~ item.op1 ~ '/' ~ item.slug : '/' ~ item.slug %}
+                                            <div class="item">
+                                                <a href="{{ item_url }}">{{ item.title }}</a>
+                                            </div>
+                                        {% else %}
+                                            <p>No se encontraron resultados.</p>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% include 'partials/sidebar.html.twig' with { items: otros } %}
+            </div>
+        </div>
+    </section>
+
+    {% include 'partials/footer.html.twig' with { slider: slider } %}
+{% endblock %}

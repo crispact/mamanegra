@@ -1,0 +1,95 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block page_title %}{{ titulo }} | Latacunga - Ecuador{% endblock %}
+{% block og_title %}inicio - la comparsa de la mama negra | Latacunga - Ecuador{% endblock %}
+{% block og_url %}{{ url }}{% endblock %}
+{% block og_description %}&quot;La Santísima Tragedia&quot; o &quot;Fiesta de la Capitanía&quot;, más conocida como &quot;Comparsa de la Mama Negra&quot;, es un acto devocional a Nuestra Señora de la Merced, celebrada en la ciudad de Latacunga, Cotopaxi - Ecuador{% endblock %}
+{% block canonical %}{{ url }}{% endblock %}
+{% block itemprop_name %}inicio - la comparsa de la mama negra | Latacunga - Ecuador{% endblock %}
+{% block itemprop_description %}{{ block('og_description') }}{% endblock %}
+{% block meta_description %}{{ block('og_description') }}{% endblock %}
+
+{% block content %}
+    {% include 'partials/top-header.html.twig' %}
+
+    <section class="welcome-post-sliders owl-carousel">
+        {% for item in topSlider %}
+            <div class="welcome-single-slide">
+                <img src="{{ item.imagen }}" alt="slider" loading="lazy">
+                <div class="project_title">
+                    <div class="post-date-commnents d-flex"></div>
+                    <a href="/personajes/{{ item.slug }}">
+                        <h5>{{ item.title }}</h5>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+
+    <section class="categories_area clearfix" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single_catagory wow fadeInUp" data-wow-delay=".3s">
+                        <img src="/assets/img/bg-img/latacunga.jpg" alt="latacunga" loading="lazy">
+                        <div class="catagory-title">
+                            <a href="/latacunga"><h5>Latacunga</h5></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single_catagory wow fadeInUp" data-wow-delay=".6s">
+                        <img src="/assets/img/bg-img/cotopaxi.jpg" alt="cotopaxi" loading="lazy">
+                        <div class="catagory-title">
+                            <a href="/volcan-cotopaxi"><h5>Volcán Cotopaxi</h5></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single_catagory wow fadeInUp" data-wow-delay=".9s">
+                        <img src="/assets/img/bg-img/la-laguna.jpg" alt="la-laguna" loading="lazy">
+                        <div class="catagory-title">
+                            <a href="/atractivos"><h5>Atractivos</h5></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog_area section_padding_0_80">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="single-post wow fadeInUp" data-wow-delay=".2s">
+                                <div class="post-thumb">
+                                    <img src="/assets/img/blog-img/la-comparsa.jpg" alt="la comparsa" loading="lazy">
+                                </div>
+                                <div class="post-content text-justify">
+                                    <a href="/la-comparsa-de-la-mama-negra">
+                                        <h1 class="post-headline">La comparsa de la Mama Negra</h1>
+                                    </a>
+                                    <p>Latacunga, ciudad incrustada en medio de los Andes ecuatorianos, en América del Sur, guarda en su seno una manifestación de su religiosidad popular única, llena de elementos culturales, sociales y folclóricos llamada "Santísima Tragedia" o "Fiesta de la Capitanía", más conocida como "Comparsa de la Mama Negra". Representa un acto devocional a Nuestra Señora de la Merced.</p>
+                                    <p>A la llegada de la conquista española, los pueblos que habitaban estas regiones tenían diversos rituales relacionados con sus observaciones astronómicas, constituyéndose en el eje de su espiritualidad y religiosidad, es así como existían ceremonias y más expresiones culturales, los días cuando el sol proyecta su radiación perpendicularmente hacia la tierra: el 21 de junio –solsticio de invierno- "El Inti Raymi"; y el 21 de diciembre –solsticio de verano- "El Kapaj Raymi"; y cuando el sol se proyecta en los hemisferios norte y sur, perpendicularmente al trópico de cáncer y de capricornio: el 21 de marzo – equinoccio de primavera- "El Pawkar Raymi"; y el 21 de septiembre – equinoccio de otoño- "El Coya Raymi".</p>
+                                    <p>La conquista española, buscaba la extirpación de las idolatrías y de las costumbres paganas, reemplazaron éstos rituales con celebraciones religiosas diversas como: Navidad, Corpus Christi o la veneración a la Virgen de la Merced, manifestaciones visibles en el sincretismo religioso de nuestros días, que enriquecen nuestra religiosidad popular.</p>
+                                    <blockquote class="yummy-blockquote mt-30 mb-30">
+                                        <p>Según Eduardo Paredes Ortega <i>"La fiesta, instituida por la devota María Gabriela de Quiroz dueña de la hacienda Cunchibamba y molinos en el barrio Caliente cobraba vigor con el acto religioso, redoble de campanas y comedias de irónica ridiculez, invenciones pergoñadas con infalible imitación" "Doña María de Quiroz pedía: que el día nueve de diciembre y no otro se celebre dicha fiesta del Volcán". Continúa "Bajo la égida de Tomas Páramo, Comendador Mercedario, el primer Auto sacramental, entre religioso y pagano, tuvo lugar en la plazeta de Mercedes, junto a la puerta lateral del antiguo templo, donde se concretó la función sobre un cobertizo; posteriormente, la consabida procesión con la Señora de la Merced, Patrona y Abogada del Cerro Cotopaxi"</i></p>
+                                    </blockquote>
+                                    <p>En el S. XXI, la mama negra es una celebración en la que se rinde homenaje a la Virgen de la Merced a quien conceden según cuenta la tradición, la gratitud y reconocimiento por la protección en uno de los procesos eruptivos del Volcán activo más alto del planeta, el Cotopaxi.</p>
+                                    <p>Esta fiesta se lleva ha cabo a finales de septiembre, los días 23 y 24, cuando la Iglesia Católica conmemora a la Virgen de la Merced.</p>
+                                    <a href="/la-comparsa-de-la-mama-negra" class="read-more">Continuar Leyendo..</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% include 'partials/sidebar.html.twig' with { items: otros } %}
+            </div>
+        </div>
+    </section>
+
+    {% include 'partials/footer.html.twig' with { slider: slider } %}
+{% endblock %}

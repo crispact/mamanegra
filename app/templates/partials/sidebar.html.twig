@@ -1,0 +1,71 @@
+<div class="col-12 col-sm-8 col-md-6 col-lg-4">
+    <div class="blog-sidebar mt-5 mt-lg-0">
+
+        <div class="single-widget-area about-me-widget text-center">
+            <p>Una producción propia con amor para Latacunga: </p>
+            <button class="btn contact-btn video">
+                <a href="https://www.youtube.com/watch?v=iZeHrZ2f81I" data-toggle="lightbox" data-width="1280">
+                    <i class="fa fa-youtube-play" style="font-size: 20px; font-weight: normal" aria-hidden="true"></i> Canción La Mama Negra
+                </a>
+            </button>
+        </div>
+
+        <div class="single-widget-area about-me-widget text-center">
+            <div class="widget-title">
+                <h6>Sé nuestro fan!</h6>
+            </div>
+            <div class="fb-page"
+                 data-href="https://www.facebook.com/cotopaxicultural/"
+                 data-tabs="timeline, messages"
+                 data-width="" data-height=""
+                 data-small-header="false"
+                 data-adapt-container-width="true"
+                 data-hide-cover="true"
+                 data-show-facepile="true">
+                <blockquote cite="https://www.facebook.com/cotopaxicultural/" class="fb-xfbml-parse-ignore">
+                    <a href="https://www.facebook.com/cotopaxicultural/">Cotopaxi Cultural</a>
+                </blockquote>
+            </div>
+        </div>
+
+        <div class="single-widget-area subscribe_widget text-center">
+            <div class="widget-title">
+                <h6>Síguenos</h6>
+            </div>
+            <div class="subscribe-link">
+                <a href="https://www.facebook.com/cotopaxicultural" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+                <a href="https://twitter.com/turismocotopaxi" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+                <a href="https://instagram.com/cotopaxicultural" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                <a href="https://www.youtube.com/c/TurismoCotopaxi" target="_blank"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a>
+                <a href="https://photos.app.goo.gl/dRfMrFgU7j3f2iTL7" target="_blank"><i class="fa fa-google fa-2x" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+        <div class="single-widget-area subscribe_widget text-center">
+            <div class="widget-title">
+                <h6>Páginas amigas</h6>
+            </div>
+            <a href="http://www.latacunga.com" target="_blank">
+                <img class="img-fluid" src="/assets/img/bg-img/latacunga-com-logo.png" alt="latacunga-com-logo">
+            </a>
+        </div>
+
+        <div class="single-widget-area popular-post-widget">
+            <div class="widget-title text-center">
+                <h6>Populares</h6>
+            </div>
+            {% for item in items %}
+                {% set item_url = item.op1 in ['personajes', 'la-comparsa'] ? '/' ~ item.op1 ~ '/' ~ item.slug : '/' ~ item.slug %}
+                <div class="single-populer-post d-flex">
+                    <img src="{{ item.image }}" alt="side-slider" loading="lazy">
+                    <div class="post-content">
+                        <a href="{{ item_url }}">
+                            <h6>{{ item.title }}</h6>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>

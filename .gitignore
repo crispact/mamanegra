@@ -1,0 +1,20 @@
+# Dependencies
+app/vendor/
+
+# Environment
+app/.env
+
+# IDE
+.idea/
+*.iml
+inspectionProfiles/
+modules.xml
+workspace.xml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Legacy (delete these folders locally before pushing)
+laravel/
+public_html_old/

@@ -1,0 +1,42 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block page_title %}{{ titulo }}{% endblock %}
+{% block og_title %}contacto - mamanegra.ec | Latacunga - Ecuador{% endblock %}
+{% block og_url %}{{ url }}{% endblock %}
+{% block og_description %}Cotopaxi Cultural es una iniciativa que pretende dar a conocer la rica cultura en la Provincia de Cotopaxi mediante la recolección y difusión de información.{% endblock %}
+{% block canonical %}{{ url }}{% endblock %}
+{% block itemprop_name %}contacto - mamanegra.ec | Latacunga - Ecuador{% endblock %}
+{% block itemprop_description %}{{ block('og_description') }}{% endblock %}
+{% block meta_description %}{{ block('og_description') }}{% endblock %}
+
+{% block content %}
+    {% include 'partials/top-header.html.twig' %}
+
+    <section class="blog_area section_padding_0_80">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="single-post wow fadeInUp" data-wow-delay=".2s">
+                                <div class="post-thumb">
+                                    <img class="" src="/assets/img/blog-img/logo_bg_negro.png" alt="mama-negra">
+                                </div>
+                                <div class="post-content text-justify">
+                                    <h2 class="post-headline">Cotopaxi Cultural</h2>
+                                    <p>Cotopaxi Cultural es una iniciativa que pretende dar a conocer la rica cultura en la Provincia de Cotopaxi mediante la recolección y difusión de información. La idea central consiste en documentar los diversos atractivos turísticos, folclore, manifestaciones propias en peligro de desaparecer, esto a través de los miles de aportes de nuestra comunidad.</p>
+                                    <p><br>Si desea contactarnos puede hacerlo al correo:</p>
+                                    <p><a href="mailto:turismocotopaxi@gmail.com">turismocotopaxi@gmail.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% include 'partials/sidebar.html.twig' with { items: otros } %}
+            </div>
+        </div>
+    </section>
+
+    {% include 'partials/footer.html.twig' with { slider: slider } %}
+{% endblock %}
