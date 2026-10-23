@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-10863282-1"></script>
+    <!-- TODO: reemplazar G-XXXXXXXXXX con el ID de GA4 real -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'UA-10863282-1');
-    </script>
+        gtag('config', 'G-XXXXXXXXXX');
+    </script> -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,7 +26,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.mamanegra.com.ec/{% block og_url %}{% endblock %}">
     <meta property="og:image" content="{% block og_image %}https://www.mamanegra.com.ec/assets/img/logo_180_180.png{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}&quot;La Santísima Tragedia&quot; o &quot;Fiesta de la Capitanía&quot;, más conocida como &quot;Comparsa de la Mama Negra&quot;, es un acto devocional a Nuestra Señora de la Merced, celebrada en Latacunga, Ecuador{% endblock %}">
     <link rel="canonical" href="https://www.mamanegra.com.ec/{% block canonical %}{% endblock %}">
 
     <meta itemprop="name" content="{% block itemprop_name %}la comparsa de la mama negra | Latacunga - Ecuador{% endblock %}">
@@ -52,13 +52,13 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Varela+Round" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Varela+Round&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/fonts/font-awesome.css">
     <link rel="stylesheet" href="/assets/style.css">
     <link rel="stylesheet" href="/assets/css/responsive/responsive.css">
+    {% block extra_head %}{% endblock %}
 </head>
 <body>
 
@@ -75,17 +75,6 @@
 <script src="/assets/js/others/jquery.waypoints.min.js"></script>
 <script src="/assets/js/others/plugins.js"></script>
 <script src="/assets/js/active.js"></script>
-<script>
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId            : '1607547592726087',
-            autoLogAppEvents : true,
-            xfbml            : true,
-            version          : 'v7.0'
-        });
-    };
-</script>
-<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 <script>
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
         event.preventDefault();

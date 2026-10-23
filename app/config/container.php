@@ -8,9 +8,11 @@ use Twig\TwigFunction;
 return [
 
     Twig::class => function (): Twig {
+        $debug = (bool) ($_ENV['APP_DEBUG'] ?? false);
         $twig = Twig::create(__DIR__ . '/../templates', [
-            'cache' => false,
-            'autoescape' => 'html',
+            'cache'       => $debug ? false : __DIR__ . '/../cache/twig',
+            'auto_reload' => $debug,
+            'autoescape'  => 'html',
         ]);
 
         $env = $twig->getEnvironment();
@@ -21,7 +23,7 @@ return [
             string $title = '',
             string $image = ''
         ): string {
-            $base = 'https://www.mamanegra.com.ec';
+            $base = rtrim($_ENV['APP_URL'] ?? 'https://www.mamanegra.com.ec', '/');
             $url  = $base . $path;
             return match ($network) {
                 'facebook'  => 'https://www.facebook.com/sharer/sharer.php?u=' . urlencode($url),

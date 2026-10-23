@@ -26,6 +26,9 @@ class Post
 
     public static function search(PDO $pdo, string $query): array
     {
+        if ($query === '') {
+            return [];
+        }
         $term = '%' . $query . '%';
         $stmt = $pdo->prepare(
             'SELECT * FROM posts WHERE body LIKE ? OR title LIKE ?'

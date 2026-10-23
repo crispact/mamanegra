@@ -110,9 +110,11 @@ class HomeController
             return [];
         }
 
+        $allowed = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
         $files = array_values(array_filter(
             scandir($dir),
-            static fn(string $f): bool => !in_array($f, ['.', '..'], true) && is_file($dir . $f)
+            static fn(string $f): bool => is_file($dir . $f)
+                && in_array(strtolower(pathinfo($f, PATHINFO_EXTENSION)), $allowed, true)
         ));
 
         $count = count($files);
